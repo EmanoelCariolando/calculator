@@ -1,14 +1,15 @@
-
-let tela = document.querySelector('#display');
+let tela = document.querySelector('#display') as HTMLInputElement
 let icons = document.querySelectorAll('.operator');
 let number = ''
 let numberTwo = ''
 let op = ''
 let info = true
-tela.value = '0'
+tela.value = '0' 
 
-let newIcons = icons.forEach((icon) => {
-    icon.addEventListener('click', (e) => {
+type ver = string | number;
+ 
+let newIcons = icons.forEach((icon) =>  {
+    icon.addEventListener('click', (e: Event)  => {
        if (number === '') return;
 
        op = e.target.innerHTML;
@@ -16,7 +17,7 @@ let newIcons = icons.forEach((icon) => {
     })
 })
 
-function appendValue(e){
+function appendValue(e: Event){
    
     //first if
     if (info){
@@ -69,7 +70,3 @@ function appendValue(e){
     }
 
  }
-  
- 
-
- 
